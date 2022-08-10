@@ -6,7 +6,7 @@ DATASET=my_train
 LABEL_NAME_FILE=label_names.txt
 TRAIN_CORPUS=cleaned_train.txt
 TEST_CORPUS=test.txt
-TEST_LABEL=test_labels.txt
+#TEST_LABEL=test_labels.txt
 MAX_LEN=200
 TRAIN_BATCH=32
 ACCUM_STEP=4
@@ -17,7 +17,7 @@ SELF_TRAIN_EPOCH=1
 
 python src/train.py --dataset_dir datasets/${DATASET}/ --label_names_file ${LABEL_NAME_FILE} \
                     --train_file ${TRAIN_CORPUS} \
-                    --test_file ${TEST_CORPUS} --test_label_file ${TEST_LABEL} \
+                    --test_file ${TEST_CORPUS} \
                     --max_len ${MAX_LEN} \
                     --train_batch_size ${TRAIN_BATCH} --accum_steps ${ACCUM_STEP} --eval_batch_size ${EVAL_BATCH} \
                     --gpus ${GPUS} \
